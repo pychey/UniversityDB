@@ -11,7 +11,7 @@ CREATE USER 'emma'@'localhost' IDENTIFIED BY 'Student_pass_2024!';
 CREATE USER 'michael'@'localhost' IDENTIFIED BY 'Staff_pass_2024!';
 CREATE USER 'olivia'@'localhost' IDENTIFIED BY 'Library_pass_2024!';
 CREATE USER 'liam'@'localhost' IDENTIFIED BY 'Finance_pass_2024!';
-CREATE USER 'noah'@'localhost' IDENTIFIED BY 'Readonly_pass_2024!';
+CREATE USER 'noah'@'localhost' IDENTIFIED BY 'Reporter_pass_2024!';
 
 -- =============================
 -- 2. Create Roles
@@ -22,7 +22,7 @@ CREATE ROLE 'student_role';
 CREATE ROLE 'staff_role';
 CREATE ROLE 'librarian_role';
 CREATE ROLE 'financial_role';
-CREATE ROLE 'readonly_role';
+CREATE ROLE 'reporter_role';
 
 -- =============================
 -- 3. Grant Privileges to Roles
@@ -69,7 +69,7 @@ GRANT SELECT ON UniversityDB.Students TO 'financial_role';
 GRANT SELECT ON UniversityDB.Enrollments TO 'financial_role';
 
 -- Read-only Role
-GRANT SELECT ON UniversityDB.* TO 'readonly_role';
+GRANT SELECT ON UniversityDB.* TO 'reporter_role';
 
 -- =============================
 -- 4. Assign Roles to Users
@@ -80,6 +80,6 @@ GRANT 'student_role' TO 'emma'@'localhost';
 GRANT 'staff_role' TO 'michael'@'localhost';
 GRANT 'librarian_role' TO 'olivia'@'localhost';
 GRANT 'financial_role' TO 'liam'@'localhost';
-GRANT 'readonly_role' TO 'noah'@'localhost';
+GRANT 'reporter_role' TO 'noah'@'localhost';
 
 
